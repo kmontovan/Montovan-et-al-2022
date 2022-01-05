@@ -13,6 +13,22 @@ RunModel <- function(param,ODE_func){
   return(c(Size,max(Survival),BestChoice))
 }
 
+RunModel2 <- function(param,ODE_func){
+  param[['forage']]=1; outh=SolveSystem(param,ODE_func) #hide
+  param[['forage']]=0; outf=SolveSystem(param,ODE_func) #forage
+  Survival=data.frame(x2h=tail(outh[,3],1),x2f=tail(outf[,3],1))
+
+  Size=outh[first(which(outh[,1]>=round(as.numeric(param['PredStart']),2))),2]
+  if(Survival[1]<0 & Survival[2]<0){
+    BestChoice='BothNegative'
+  } else if(Survival[2]>Survival[1]){
+    BestChoice='forage'
+  } else{
+    BestChoice='hide'
+  }
+  return(data.frame(Size,Survival,Choice=BestChoice))
+}
+
 #Create a function that will define the state variables, timeframe 
 # and will numerically find the solution for the ODE. Note, if a
 # prey is less than $M$ mg at the end of the timeframe 
