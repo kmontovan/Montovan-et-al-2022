@@ -11,12 +11,12 @@ BaseParam <- c(
   alpha=.5,
   d=0.05, #constant non-predator death of larvae
   
-  m0 =0.634, # size at time 0
-  M=157, #size at end of larval growth
-  T=15, #time at end of larval growth 
+  m0 = 1, # size at time 0
+  M = 200, #size at end of growth
+  T = 20, #time at end of growth 
   
-  tmin=0, #time frame for growth begin # Start time at beginning
-  tmax=30, #end time frame for growth
+  tmin = 0, #time frame for growth begin # Start time at beginning
+  tmax = 35, #end time frame for growth
   
   forage=NA,#forage while predator present? 1=no, 0=yes
   PredStart = NA, #start time of pred present
