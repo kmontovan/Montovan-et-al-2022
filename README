@@ -1,0 +1,15 @@
+Overview of the files in this repository
+
+
+
+
+Need 
+- main code for running model
+- params.r
+- sudfunctions.r
+- figure 3a
+- figure 3b
+- sensitivity analysis and figure 4
+- compare growth curves figure 6
+- fit growth curves for CPB - table 2 and figures 7a and 7b
+- compare canibal and non-cannibal CPB figures 8a and 8b
