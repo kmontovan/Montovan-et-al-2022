@@ -1,15 +1,28 @@
 Overview of the files in this repository
 
+General Model R files
+  - RunModel_CompareBehavior.R: This file runs the model and find the optimal behavior for the prey. 
+  - MultipleSwitch_Fig3b.R: This file looks at what the optimal strategy is if growth oscilates between being fast and slow.
+  - Sensitivity_Analysis.R: This file sets up and runs a Latin Hypercube sampling of parameter space and sensitivity analysis.
+  - CPB_Make_Fig8.R: This file runs the model (parametrized for the CPB) for a range of values for $m$ and $d$ and looks at 
+    the optimal "strategy switching size"  and survival benefits of being a cannibal for each combination of these parameters. 
+
+R subfunctions/paramter files:
+  - Subfunctions.R: This file contains all the main subfunctions for running the model. It is used in all the above R files. 
+  - Params.R: This file contains the baseline paramters used for modeling and is used in all of the above files. 
+
+Files used for Fitting the Growth curve to Colorado potato beetle (CPB)
+  - CPB_fitGrowth_Fig7a.R: This file loads in the Colorado potato beetle growth data and fits the parameters to the data from non-cannibal 
+    larvae using the optim function. The best fit for the three different versions of the von Bertalanffy Growth Function (VBGF) are compared. 
+    It produces Figure 7a for the manuscript.
+  - CPB_fitGrowth_Fig7b.R: This file is similar to the previous one but looks speficially at fitting the cannibal data in two different ways. 
+  - VBGF_subfunctions.R: Contains all the main functions used in CPB_fitGrowth_Fig7a.R and CPB_fitGrowth_Fig7b.R
+
+Data files:
+  - cannGR.csv
+  - Control_larval mass.csv
+  Both of these data files contain data for the mass of CPB larvae at different ages. They were collected under the same laboratory conditions 
+  and cannibal and no-cannibal larvae were identified and observed throughout their growth. This data is used to fit the VBGF to Colorado
+  potato beetle growth.
 
 
-
-Need 
-- main code for running model
-- params.r
-- sudfunctions.r
-- figure 3a
-- figure 3b
-- sensitivity analysis and figure 4
-- compare growth curves figure 6
-- fit growth curves for CPB - table 2 and figures 7a and 7b
-- compare canibal and non-cannibal CPB figures 8a and 8b
